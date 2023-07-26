@@ -5,7 +5,7 @@
 #include <cstring>
 
 class Student {
-public: 
+public:
 	int student_no;
 	//char name[100];
 	char* name;
@@ -27,13 +27,13 @@ public:
 	void printStudentInfo() {
 		printf("ÇÐ¹ø : %d\n", student_no);
 		printf("ÀÌ¸§ : %s\n", name);
-		printf("¼ºº° : %s\n", gender == 0 ? "³²ÀÚ" : "¿©ÀÚ"); 
+		printf("¼ºº° : %s\n", gender == 0 ? "³²ÀÚ" : "¿©ÀÚ");
 	}
 };
 
 int main() {
 
-	Student* ps = new Student(5678,"±è¹Î¼ö",0);
+	Student* ps = new Student(5678, "±è¹Î¼ö", 0);
 
 	/*ps->student_no = 5678;
 	strcpy(ps->name, "±è¹Î¼ö");
@@ -53,7 +53,7 @@ int main() {
 
 	ps3.printStudentInfo();
 
-	
+
 
 	return 0;
 }
