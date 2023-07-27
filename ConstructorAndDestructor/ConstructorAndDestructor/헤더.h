@@ -11,16 +11,26 @@ int number_counter = 1;
 class Employee {
 public:
 	int no;
-	char name[100];
+	//char name[100];
+	char* name;
 	int gender;
-	char rank[100];
+	//char rank[100];
+	char* rank;
 
 	Employee(char* name, int gender, char* rank) {
-		strcpy(this->name, name);
+		this->name = new char[strlen(name) + 1]; // 널문자 까지
+		this->rank = new char[strlen(rank) + 1];
 		this->gender = gender;
+		strcpy(this->name, name); // 주소값이 다르고 실제 값도 다른 메모리 주소에 존재
 		strcpy(this->rank, rank);
 		this->no = number_counter;
 		number_counter++;
+	}
+
+	~Employee() {
+		delete[] name;
+		delete[] rank;
+		printf("%d번 사원이 삭제 되었습니다.\n", no);
 	}
 
 	void printInfo() {
